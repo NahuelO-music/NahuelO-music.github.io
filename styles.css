@@ -938,6 +938,121 @@ body {
     margin-top: 4px;
 }
 
+.footer-agency {
+    text-align: right;
+    border-left: 1px solid var(--border-subtle);
+    padding-left: 24px;
+}
+
+.agency-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition);
+    opacity: 0.6;
+}
+
+.agency-link:hover {
+    opacity: 1;
+}
+
+.agency-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: white;
+    position: relative;
+}
+
+.agency-logo-icon::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #D93025;
+    /* Bauhaus Red */
+    border-radius: 50%;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.agency-logo-icon::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #1A73E8;
+    /* Bauhaus Blue */
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.logo-letters {
+    position: relative;
+    z-index: 2;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes shine {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.agency-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.agency-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+.agency-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-copyright,
+    .footer-agency {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .agency-link {
+        justify-content: center;
+    }
+
+    .agency-info {
+        align-items: flex-start;
+    }
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
