@@ -1028,7 +1028,7 @@ body {
 .agency-name {
     font-size: 0.9rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--text-primary);
 }
 
 @media (max-width: 900px) {
