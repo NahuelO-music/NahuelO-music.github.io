@@ -10,7 +10,42 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initSupportModal();
+    initAnalyticsTracking();
 });
+
+// Analytics Tracking Logic
+// ========================================
+function initAnalyticsTracking() {
+    // Tracking para botones de soporte, agencia y copiado
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('.support-btn, .agency-link, .copy-btn, .nav-support-btn');
+        if (!target) return;
+
+        let label = target.innerText.trim() || target.getAttribute('title') || target.getAttribute('data-address') || 'Botón';
+        let category = target.classList.contains('agency-link') ? 'Agencia' : 'Interacción';
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'click_interaccion', {
+                'event_category': category,
+                'event_label': label,
+                'value': 1
+            });
+            console.log(`[Analytics] Tracked: ${category} - ${label}`);
+        }
+    });
+
+    // Tracking para todos los links externos
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_externo', {
+                    'link_url': this.href,
+                    'link_text': this.innerText.trim() || 'Link Externo'
+                });
+            }
+        });
+    });
+}
 
 // Support Modal Logic
 // ========================================
