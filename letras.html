@@ -360,6 +360,14 @@
                         <div class="modern-lyrics">${song.lyrics}</div>
                     `;
                     render.classList.add('active');
+
+                    // Analytics: Track song selection
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'view_lyrics', {
+                            'song_title': song.title,
+                            'song_track': song.track
+                        });
+                    }
                 }, 300);
             };
             pill.addEventListener('click', selectSong);
