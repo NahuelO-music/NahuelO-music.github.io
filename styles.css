@@ -200,6 +200,34 @@ body {
     padding: 5px;
 }
 
+.nav-support-btn {
+    padding: 8px 18px;
+    background: var(--accent-gradient);
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.nav-support-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+    .nav-support-btn {
+        display: none;
+        /* Hide on mobile navbar, already exists in support section */
+    }
+}
+
 .nav-toggle span {
     width: 24px;
     height: 2px;

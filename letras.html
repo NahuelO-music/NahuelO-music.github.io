@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragmentos del Naufragio | Letras de NahuelO | Fusión Humano-IA</title>
+    <meta name="description"
+        content="Explora las letras de 'Adentro Mío' en Fragmentos del Naufragio. La bitácora digital de NahuelO donde la poesía humana se encuentra con la Inteligencia Artificial.">
+    <meta name="keywords"
+        content="letras NahuelO, Adentro Mío, Fragmentos del Naufragio, poesía IA, música introspectiva, letras de canciones">
+
+    <link rel="canonical" href="https://nahuelo.com/letras.html">
+    <link rel="alternate" hreflang="es" href="https://nahuelo.com/letras.html">
+    <link rel="alternate" hreflang="en" href="https://nahuelo.com/letras.html">
+    <link rel="alternate" hreflang="x-default" href="https://nahuelo.com/letras.html">
+
+    <!-- Schema.org JSON-LD para la sección de letras -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWorkSeries",
+      "name": "Fragmentos del Naufragio",
+      "author": {
+        "@type": "Person",
+        "name": "NahuelO"
+      },
+      "description": "Antología de letras del álbum Adentro Mío, explorando temas de soledad, resiliencia y renovación.",
+      "genre": "Poesía / Letras de Canciones"
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-glow: #8b5cf6;
+            --text-main: #f8fafc;
+        }
+
+        body {
+            background-color: #020617;
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .modern-container {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+        }
+
+        .modern-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .modern-header h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            background: linear-gradient(135deg, #fff 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .modern-header p {
+            font-weight: 200;
+            letter-spacing: 4px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .modern-selector {
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 0 24px;
+        }
+
+        .track-pill {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: #94a3b8;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .track-pill:hover,
+        .track-pill.active {
+            background: white;
+            color: #020617;
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .artifact-display {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .glass-artifact {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(40px);
+            border-radius: 24px;
+            padding: 80px 60px;
+            min-height: 600px;
+            position: relative;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+        }
+
+        .artifact-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .artifact-content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .modern-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 50px;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .modern-lyrics {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #cbd5e1;
+            white-space: pre-line;
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .unused-lyric {
+            opacity: 0.25;
+            font-style: italic;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .modern-track-num {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .glass-artifact {
+                padding: 40px 20px;
+            }
+
+            .modern-title {
+                font-size: 2rem;
+            }
+
+            .modern-lyrics {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div id="particles"></div>
+
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">NahuelO</a>
+            <a href="index.html" class="nav-support-btn"
+                style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Inicio
+            </a>
+        </div>
+    </nav>
+
+    <main class="modern-container">
+        <div class="container">
+            <header class="modern-header">
+                <h1>Fragmentos del Naufragio</h1>
+                <p>BITÁCORA DE VIAJE</p>
+            </header>
+
+            <div class="modern-selector" id="modern-selector">
+                <!-- Pills injected by JS -->
+            </div>
+
+            <div class="artifact-display">
+                <div class="glass-artifact" id="glass-artifact">
+                    <div id="artifact-render" class="artifact-content active">
+                        <div style="text-align:center; padding-top: 150px; opacity: 0.2;">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            <p style="margin-top: 20px; text-transform: uppercase; letter-spacing: 2px;">Selecciona un
+                                fragmento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const songData = [
+            {
+                track: "01",
+                title: "Mi Señal",
+                lyrics: `[Intro]\nEl silencio me acompaña, y pesa en mi interior,\nlos días se repiten, y todo pierde color.\n\n[Verso 1]\nLas horas se arrastran, la casa es un espejo,\nmi mente da vueltas, buscando algún reflejo.\nSueños que quise, proyectos que dejé,\nla motivación se esconde y no sé dónde la dejé.\n\n[Coro]\nEstoy aquí, encerrado con mis pensamientos,\ntratando de no perderme entre los momentos.\nSigo buscando, aunque la fuerza se escape,\ncada día resisto, aunque a veces todo me tape.\n\n<span class="unused-lyric">[Verso 2]\nLa luz entra lenta, dibujando mis dudas,\nel tiempo se estira, y yo solo escucho murmullos.\nIntento levantarme, aunque caigo otra vez,\nlos planes que tenía parecen no volver.</span>\n\n<span class="unused-lyric">[Coro]\nEstoy aquí, encerrado con mis pensamientos,\ntratando de no perderme entre los momentos.\nSigo buscando, aunque la fuerza se escape,\ncada día resisto, aunque a veces todo me tape.</span>\n\n[Puente]\nY si mañana todo sigue igual,\nseguiré aquí, buscando mi señal.\nNo hay milagros, no hay final feliz,\nsolo la música que me hace resistir.`
+            },
+            {
+                track: "02",
+                title: "Entre Sombras",
+                lyrics: `[Intro]\nEn la penumbra de mis recuerdos me pierdo,\ncada esquina del pasado sigue siendo mi acuerdo.\n\n[Verso 1]\nCamino por pasillos de memorias gastadas,\nvoces que resuenan, promesas olvidadas.\nLas fotografías son fantasmas mudos,\ncada sonrisa esconde los días más crudos.\n\n[Coro]\nEntre sombras me encuentro buscando claridad,\natrapado en los ecos de lo que fue verdad.\nCada paso hacia atrás es un peso que llevo,\npero aquí sigo, aunque el dolor sea lo que muevo.\n\n[Verso 2]\nEl tiempo no perdona, marca cada herida,\nlas noches se estiran sin fin, sin salida.\nBusco entre la niebla algo que me guíe,\npero las sombras me abrazan, y el alma se enfría.\n\n[Coro]\nEntre sombras me encuentro buscando claridad,\natrapado en los ecos de lo que fue verdad.\nCada paso hacia atrás es un peso que llevo,\npero aquí sigo, aunque el dolor sea lo que muevo.\n\n[Puente]\nLas sombras me susurran lo que ya no soy,\npero en la oscuridad también encuentro quién soy hoy.\nAprendo a caminar con el peso que cargo,\nentre sombras que acepto, aunque el camino sea largo.`
+            },
+            {
+                track: "03",
+                title: "Frío Cercano",
+                lyrics: `[Intro]\nEl frío se instala entre nosotros, sin palabras,\ncada mirada tuya es una puerta que se cierra.\n\n[Verso 1]\nCompartimos el espacio, pero no la vida,\nlos silencios se acumulan, la distancia crece cada día.\nTus gestos son vacíos, tus ojos están lejos,\ny yo me pierdo intentando encontrar nuestros reflejos.\n\n[Coro]\nVivo en este espacio vacío que compartimos,\nbuscando alguna señal en tus gestos sin vida.\nEl frío cercano me congela por dentro,\ny sigo aquí, aunque te siento tan distante del centro.\n\n[Verso 2]\nTu silencio me habla más que cualquier palabra,\ny mi espíritu se agota tratando de alcanzarte.\nVeo tu silencio como un espejo lejano,\ny mi propio ser se desvanece, tratando de quedarse.\n\n[Coro]\nVivo en este espacio vacío que compartimos,\nbuscando alguna señal en tus gestos sin vida.\nEl frío cercano me congela por dentro,\ny sigo aquí, aunque te siento tan distante del centro.\n\n[Puente]\nEl frío cercano me enseña lo que ya no somos,\npero también me obliga a buscar lo que soy solo.\nAprendo a aceptar que no todo se puede salvar,\ny en el silencio encuentro mi propia paz.`
+            },
+            {
+                track: "04",
+                title: "Ecos del Silencio",
+                lyrics: `[Intro]\nEl vacío se instala, parece que nada importa,\ncada intento de conexión se quiebra y se aborta.\n\n[Verso 1]\nTe miro y no te veo, te hablo y no escuchas,\nel aire entre nosotros es denso y sin luchas.\nCamino por la casa como un fantasma olvidado,\nmis pasos resuenan, pero nadie ha escuchado.\n\n[Coro]\nEcos del silencio llenan este lugar,\nbuscando una chispa que nos haga despertar.\nPero la distancia crece, aunque estemos tan cerca,\ny el vacío me consume mientras el alma se cierra.\n\n[Verso 2]\nRecuerdo cuando todo era más fácil de entender,\nahora las palabras se pierden sin poder.\nQuisiera gritar, pero el silencio me atrapa,\ny cada latido mío se siente como una trampa.\n\n[Coro]\nEcos del silencio llenan este lugar,\nbuscando una chispa que nos haga despertar.\nPero la distancia crece, aunque estemos tan cerca,\ny el vacío me consume mientras el alma se cierra.\n\n[Puente]\nLos ecos del silencio me enseñan a escuchar,\nlo que antes era ruido hoy es paz que puedo amar.\nAprendo que a veces la calma es la respuesta,\ny en el silencio encuentro mi propia fortaleza.`
+            },
+            {
+                track: "05",
+                title: "Última Mirada",
+                lyrics: `[Intro]\nCierro los ojos y suelto tu reflejo,\nel peso en mi pecho ya no merece mi aliento.\n\n[Verso 1]\nTus palabras vacías se disuelven en el aire,\nmis recuerdos de ti empiezan a borrarse.\nCada intento de sostener ya no alcanza,\ny la nostalgia se vuelve mi nueva fuerza y esperanza.\n\n[Coro]\nDejo de amarte, lo que nunca fue mío,\nlibero tu sombra y abrazo mi propio brío.\nNo miro atrás, aunque duela el adiós,\ncada paso adelante me acerca más a mi voz.\n\n[Verso 2]\nLos momentos que guardé se vuelven cenizas,\ny el dolor que cargaba se disuelve en palabras precisas.\nYa no busco en ti lo que siempre faltó,\nmi corazón aprende lo que el tiempo me enseñó.\n\n[Coro]\nDejo de amarte, lo que nunca fue mío,\nlibero tu shadow y abrazo mi propio brío.\nNo miro atrás, aunque duela el adiós,\ncada paso adelante me acerca más a mi voz.\n\n[Puente]\nLa última mirada es el cierre de un capítulo,\nmi alma se renueva, libre de lo que fue un obstáculo.\nHoy celebro el inicio de lo que vendrá,\ny la última mirada me enseña a soltar y a amar.`
+            },
+            {
+                track: "06",
+                title: "Luz que Queda",
+                lyrics: `[Intro]\nEl viento me lleva, dejo atrás las sombras,\ncada suspiro mío se vuelve un hilo de luz que me nombra.\n\n[Verso 1]\nCamino entre recuerdos que ya no me atan,\nlos días me enseñan que todo se desata.\nEl silencio me acompaña, pero ahora es amigo,\ncada paso que doy me acerca a lo que sigo.\n\n[Coro]\nRespiro en la calma que quedó después del adiós,\nmi corazón se reconstruye, aprende a su propio son.\nNo hay más cadenas ni fantasmas que me sigan,\nsolo la luz que queda, y mis alas que me abrigan.\n\n[Verso 2]\nLas noches ya no pesan, me encuentro en mi reflejo,\nmi voz resuena fuerte, ya no busco tu consejo.\nAprendo a quererme sin tu sombra alrededor,\ncada latido mío se vuelve mi mejor motor.\n\n[Coro]\nRespiro en la calma que quedó después del adiós,\nmi corazón se reconstruye, aprende a su propio son.\nNo hay más cadenas ni fantasmas que me sigan,\nsolo la luz que queda, y mis alas que me abrigan.\n\n[Puente]\nEl pasado se desvanece como polvo en el viento,\ncada lágrima me deja más cerca del tiempo.\nHoy celebro el eco de lo que soy por dentro,\nrenazco sin miedo, y me reconozco en mi centro.`
+            },
+            {
+                track: "07",
+                title: "Sombras que Dejo",
+                lyrics: `[Intro]\nMe alejo de los ecos que ya no me pertenecen,\ncada paso que doy deja atrás lo que entristece.\n\n[Verso 1]\nRecuerdos flotan como humo en el aire,\nme envuelven un instante y luego se deshacen.\nIntento sostener lo que ya no quiere estar,\npero mis manos vacías aprenden a soltar.\n\n[Coro]\nSon sombras que dejo, ya no pesan en mí,\ncada lágrima vieja se convierte en un fin.\nCamino ligero, aunque duela despedir,\ny el silencio me enseña a volver a vivir.\n\n[Verso 2]\nLos momentos que atesoré se vuelven lejanos,\nsusurros que antes dolían, ahora son planos.\nLa nostalgia me roza, pero no me detiene,\ncada paso me libera, cada adiós me sostiene.\n\n[Coro]\nSon sombras que dejo, ya no pesan en mí,\ncada lágrima vieja se convierte en un fin.\nCamino ligero, aunque duela despedir,\ny el silencio me enseña a volver a vivir.\n\n[Puente]\nNo miro atrás, el pasado es solo lección,\nmi corazón aprende de cada lejana emoción.\nSuelto lo que fue, abrazo lo que vendrá,\nsombras que dejo, y mi alma se elevará.`
+            },
+            {
+                track: "08",
+                title: "Latido Propio",
+                lyrics: `[Intro]\nEscucho mi corazón, marcando un ritmo nuevo,\ncada latido me recuerda que todavía me muevo.\n\n[Verso 1]\nLas sombras del pasado intentan arrastrarme,\npero siento un pulso dentro que me hace levantarme.\nMis propios pasos guían mi camino,\ny cada respiro me acerca a lo que destino.\n\n[Coro]\nSigo el latido propio, no necesito tu voz,\nmi fuerza nace de adentro, renace mi sol.\nAunque duela el recuerdo, aunque tiemble el temor,\nmi corazón late fuerte y me llena de valor.\n\n[Verso 2]\nAprendo a quererme sin buscar afuera,\ncada gesto mío ilumina la primavera.\nLos errores que cometí ya no me definen,\nmi latido me guía, y mis miedos se extinguen.\n\n[Coro]\nSigo el latido propio, no necesito tu voz,\nmi fuerza nace de adentro, renace mi sol.\nAunque duela el recuerdo, aunque tiemble el temor,\nmi corazón late fuerte y me llena de valor.\n\n[Puente]\nNo hay cadenas, no hay fantasmas que me frenen,\nmi espíritu despierta y mis dudas se deshacen.\nHoy celebro el pulso que corre en mis venas,\nlatido propio que me enseña a ser mi propio guía.`
+            },
+            {
+                track: "09",
+                title: "Horizonte Vacío",
+                lyrics: `[Intro]\nMiro adelante y solo hay un cielo gris,\nel horizonte se pierde entre lo que fui.\n\n[Verso 1]\nLos caminos que imaginé se desdibujan,\ncada paso incierto me recuerda que fluctúan.\nLas dudas me acompañan, sombras ligeras,\npero busco en mi interior respuestas sinceras.\n\n[Coro]\nCamino hacia un horizonte vacío,\ncon miedo y esperanza entrelazados en el río.\nCada decisión pesa, cada instante me moldea,\npero sigo en pie, aunque la niebla me rodea.\n\n[Verso 2]\nEl pasado se asoma con silencios y grietas,\npero encuentro fuerza en mis propias metas.\nLos sueños se reinventan en mi mente callada,\ny cada caída se vuelve una lección abrazada.\n\n[Coro]\nCamino hacia un horizonte vacío,\ncon miedo y esperanza entrelazados en el río.\nCada decisión pesa, cada instante me moldea,\npero sigo en pie, aunque la niebla me rodea.\n\n[Puente]\nNo hay certezas, solo pasos y reflexión,\ncada instante me enseña mi propia dirección.\nHorizonte vacío, pero mi corazón guía,\naprendo a caminar entre dudas y poesía.`
+            },
+            {
+                track: "10",
+                title: "Aire Nuevo",
+                lyrics: `[Intro]\nRespiro profundo y siento el cambio en mí,\nel viento me guía hacia un camino por descubrir.\n\n[Verso 1]\nLas cadenas del pasado ya no me atan,\ncada pensamiento oscuro se desvanece y se aparta.\nSiento la libertad en cada latido,\nmi corazón despierta, fuerte y decidido.\n\n[Coro]\nAire nuevo recorre mi piel y mi ser,\ncada instante me invita a volver a creer.\nLos fantasmas se disuelven, la luz me alcanza,\nrenazco con fuerza, con esperanza y confianza.\n\n[Verso 2]\nLos errores y dolores se vuelven lecciones,\naprendo a caminar sin cargas ni prisiones.\nLa vida se abre ante mí como un cielo claro,\ny cada paso que doy me acerca a mi faro.\n\n[Coro]\nAire nuevo recorre mi piel y mi ser,\ncada instante me invita a volver a creer.\nLos fantasmas se disuelven, la luz me alcanza,\nrenazco con fuerza, con esperanza y confianza.\n\n[Puente]\nNo miro atrás, solo al horizonte brillante,\ncada respiración me hace más constante.\nHoy celebro el presente y lo que vendrá,\naire nuevo que me guía hacia la paz que hallaré.`
+            }
+        ];
+
+        const selector = document.getElementById('modern-selector');
+        const render = document.getElementById('artifact-render');
+
+        songData.forEach((song, idx) => {
+            const pill = document.createElement('button');
+            pill.className = 'track-pill';
+            pill.textContent = song.title;
+            const selectSong = () => {
+                document.querySelectorAll('.track-pill').forEach(b => b.classList.remove('active'));
+                pill.classList.add('active');
+
+                render.classList.remove('active');
+
+                setTimeout(() => {
+                    render.innerHTML = `
+                        <span class="modern-track-num">Fragmento ${song.track}</span>
+                        <h2 class="modern-title">${song.title}</h2>
+                        <div class="modern-lyrics">${song.lyrics}</div>
+                    `;
+                    render.classList.add('active');
+                }, 300);
+            };
+            pill.addEventListener('click', selectSong);
+            selector.appendChild(pill);
+
+            if (idx === 0) selectSong();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

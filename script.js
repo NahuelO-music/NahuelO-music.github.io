@@ -15,18 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // Support Modal Logic
 // ========================================
 function initSupportModal() {
-    const supportBtn = document.querySelector('.btn-support');
+    const supportBtns = document.querySelectorAll('.btn-support');
     const modalOverlay = document.getElementById('support-modal');
     const modalClose = document.querySelector('.modal-close');
     const copyBtns = document.querySelectorAll('.copy-btn');
 
-    if (!supportBtn || !modalOverlay) return;
+    if (!supportBtns.length || !modalOverlay) return;
 
     // Open Modal
-    supportBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modalOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    supportBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
     });
 
     // Close Modal
