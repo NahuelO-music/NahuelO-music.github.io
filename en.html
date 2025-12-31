@@ -347,15 +347,119 @@
             <!-- Support Section -->
             <div class="support-section">
                 <h3>Like my music?</h3>
-                <p>If you want to support this independent project:</p>
+                <p>If you want to support this independent project, you can do so through the following channels:</p>
                 <div class="support-buttons">
-                    <a href="#" class="btn btn-support" onclick="alert('Coming soon: Support button'); return false;">
-                        ☕ Buy me a coffee
-                    </a>
+                    <button class="btn btn-support">
+                        ☕ Support the project
+                    </button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Support Modal -->
+    <div class="modal-overlay" id="support-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 class="modal-title">Support NahuelO</h3>
+            <p class="modal-subtitle">Every contribution helps to keep creating independent music.</p>
+
+            <div id="main-support-options">
+                <div class="support-options">
+                    <button class="support-btn btn-mercado-pago" id="show-mercadopago"
+                        style="width: 100%; border: none; cursor: pointer;">
+                        <span>💙 Mercado Pago (Argentina)</span>
+                    </button>
+                    <a href="https://paypal.me/CarlosOtero391" target="_blank" class="support-btn btn-paypal">
+                        <span>🌍 PayPal (International)</span>
+                    </a>
+                    <a href="https://airtm.me/nahuelo" target="_blank" class="support-btn"
+                        style="background: #00bcd4; color: white;">
+                        <span>💸 AirTM</span>
+                    </a>
+                    <button class="support-btn btn-crypto-trigger" id="show-crypto"
+                        style="background: var(--bg-card); border: 1px solid var(--border-subtle); color: white; width: 100%;">
+                        <span>₿ Crypto / Binance</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="crypto-section" id="mercadopago-list" style="display: none; margin-top: 0; border-top: none;">
+                <button class="back-btn" id="back-from-mp"
+                    style="background: none; border: none; color: var(--accent-primary); cursor: pointer; display: flex; align-items: center; gap: 5px; margin-bottom: 20px; font-size: 0.9rem; padding: 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                </button>
+                <h4>Mercado Pago Transfer</h4>
+
+                <div class="crypto-item">
+                    <div class="crypto-info">
+                        <span class="crypto-name">Alias</span>
+                        <span class="crypto-address">nahuelo.music</span>
+                    </div>
+                    <button class="copy-btn" data-address="nahuelo.music" title="Copy Alias">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M8 10a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2h-8a2 2 0 01-2-2v-8z" />
+                            <path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="crypto-item">
+                    <div class="crypto-info">
+                        <span class="crypto-name">CVU</span>
+                        <span class="crypto-address">0000003100075036225057</span>
+                    </div>
+                    <button class="copy-btn" data-address="0000003100075036225057" title="Copy CVU">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M8 10a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2h-8a2 2 0 01-2-2v-8z" />
+                            <path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" />
+                        </svg>
+                    </button>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 15px; text-align: center;">Valid for
+                    transfers from any Argentine bank or digital wallet.</p>
+            </div>
+
+            <div class="crypto-section" id="crypto-list" style="display: none; margin-top: 0; border-top: none;">
+                <button class="back-btn" id="back-to-options"
+                    style="background: none; border: none; color: var(--accent-primary); cursor: pointer; display: flex; align-items: center; gap: 5px; margin-bottom: 20px; font-size: 0.9rem; padding: 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                </button>
+                <h4>Binance Pay & Crypto</h4>
+
+                <div class="binance-pay-card"
+                    style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; text-align: center; margin-bottom: 20px; border: 1px solid rgba(243, 186, 47, 0.3);">
+                    <p
+                        style="font-size: 0.8rem; color: #f3ba2f; text-transform: uppercase; font-weight: 700; margin-bottom: 10px;">
+                        Binance Pay Alias</p>
+                    <div
+                        style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px;">
+                        <span style="font-size: 1.2rem; font-weight: 700; font-family: monospace;">NahuelO_Music</span>
+                        <button class="copy-btn" data-address="NahuelO_Music" title="Copy Alias"
+                            style="background: rgba(243, 186, 47, 0.2); color: #f3ba2f;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M8 10a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2h-8a2 2 0 01-2-2v-8z" />
+                                <path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <img src="assets/binance-qr.jpg" alt="Binance QR"
+                        style="width: 150px; border-radius: 12px; border: 4px solid white;">
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">Scan the QR code from the
+                        Binance App</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
