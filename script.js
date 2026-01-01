@@ -76,10 +76,14 @@ function initSupportModal() {
             document.getElementById('main-support-options').style.display = 'block';
             document.getElementById('crypto-list').style.display = 'none';
             document.getElementById('mercadopago-list').style.display = 'none';
+            if (document.getElementById('usdt-list')) document.getElementById('usdt-list').style.display = 'none';
         }, 300);
     };
 
-    modalClose.addEventListener('click', closeModal);
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) closeModal();
     });
@@ -87,12 +91,15 @@ function initSupportModal() {
     // Toggle Crypto & Mercado Pago Views
     const showCryptoBtn = document.getElementById('show-crypto');
     const showMPBtn = document.getElementById('show-mercadopago');
+    const showUSDTBtn = document.getElementById('show-usdt'); // Nuevo Botón
     const backCryptoBtn = document.getElementById('back-to-options');
     const backMPBtn = document.getElementById('back-from-mp');
+    const backUSDTBtn = document.getElementById('back-from-usdt'); // Nuevo Botón Volver
 
     const mainOptions = document.getElementById('main-support-options');
     const cryptoList = document.getElementById('crypto-list');
     const mpList = document.getElementById('mercadopago-list');
+    const usdtList = document.getElementById('usdt-list'); // Nueva Vista
 
     // Show Views
     showCryptoBtn?.addEventListener('click', () => {
@@ -105,6 +112,11 @@ function initSupportModal() {
         mpList.style.display = 'block';
     });
 
+    showUSDTBtn?.addEventListener('click', () => {
+        mainOptions.style.display = 'none';
+        usdtList.style.display = 'block';
+    });
+
     // Back to main
     backCryptoBtn?.addEventListener('click', () => {
         cryptoList.style.display = 'none';
@@ -113,6 +125,11 @@ function initSupportModal() {
 
     backMPBtn?.addEventListener('click', () => {
         mpList.style.display = 'none';
+        mainOptions.style.display = 'block';
+    });
+
+    backUSDTBtn?.addEventListener('click', () => {
+        usdtList.style.display = 'none';
         mainOptions.style.display = 'block';
     });
 
@@ -133,6 +150,7 @@ function initSupportModal() {
         });
     });
 }
+
 // Navbar Scroll Effect
 // ========================================
 function initNavbar() {

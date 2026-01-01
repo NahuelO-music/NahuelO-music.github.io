@@ -448,7 +448,11 @@
                     </a>
                     <button class="support-btn btn-crypto-trigger" id="show-crypto"
                         style="background: #f3ba2f; color: #000; border: none; width: 100%; font-weight: 600;">
-                        <span>₿ Criptomonedas / Binance</span>
+                        <span>₿ Binance Pay / QR</span>
+                    </button>
+                    <button class="support-btn" id="show-usdt"
+                        style="background: #26a17b; color: #fff; border: none; width: 100%; font-weight: 600;">
+                        <span>₮ USDT (Red BEP20/BSC)</span>
                     </button>
                 </div>
             </div>
@@ -526,15 +530,27 @@
                     <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">Escaneá el código QR
                         desde la App de Binance</p>
                 </div>
+            </div>
+
+            <!-- VISTA USDT -->
+            <div class="crypto-section" id="usdt-list" style="display: none; margin-top: 0; border-top: none;">
+                <button class="back-btn" id="back-from-usdt"
+                    style="background: none; border: none; color: var(--accent-primary); cursor: pointer; display: flex; align-items: center; gap: 5px; margin-bottom: 20px; font-size: 0.9rem; padding: 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Volver
+                </button>
+                <h4>Transferencia USDT (Crypto)</h4>
 
                 <div class="crypto-item">
                     <div class="crypto-info">
-                        <span class="crypto-name">USDT (BSC - BEP20)</span>
+                        <span class="crypto-name">USDT / BNB / ETH (Multichain)</span>
                         <span class="crypto-address"
-                            style="font-size: 0.75rem; word-break: break-all;">0x4023...648564</span>
+                            style="font-size: 0.75rem; word-break: break-all;">0xe49Fc3610C1bb46994B7B2B988D53db744be2aBa</span>
                     </div>
-                    <button class="copy-btn" data-address="0x4023eeec001f6a72c3dee33ab2486ee41b648564"
-                        title="Copiar Dirección USDT">
+                    <button class="copy-btn" data-address="0xe49Fc3610C1bb46994B7B2B988D53db744be2aBa"
+                        title="Copiar Dirección Multichain">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M8 10a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2h-8a2 2 0 01-2-2v-8z" />
@@ -542,9 +558,16 @@
                         </svg>
                     </button>
                 </div>
-                <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; text-align: center;">
-                    ⚠️ Enviar solo USDT por la red BNB Smart Chain (BEP20).
-                </p>
+                <div
+                    style="background: rgba(38, 161, 123, 0.1); border: 1px solid rgba(38, 161, 123, 0.3); border-radius: 8px; padding: 12px; margin-top: 15px;">
+                    <p style="font-size: 0.8rem; color: #26a17b; text-align: center; font-weight: 500;">
+                        ✅ Billetera Personal (Sin Mínimos)
+                    </p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 5px;">
+                        Dirección única válida para recibir <strong>USDT, BNB, ETH</strong> en redes <strong>BSC,
+                            Ethereum o Polygon</strong>.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
