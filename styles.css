@@ -1335,3 +1335,57 @@ body {
         padding: 24px 20px;
     }
 }
+/* Verified Icon in Navbar */
+.verified-icon {
+    display: inline-block;
+    margin-left: 4px;
+    color: var(--accent-secondary); 
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.5));
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Platforms Modal Styles */
+.platforms-grid-modal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.platform-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: var(--transition);
+    gap: 10px;
+}
+
+.platform-item:hover {
+    background: var(--bg-glass);
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+}
+
+.platform-icon {
+    font-size: 2rem;
+}
+
+.platform-name {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}

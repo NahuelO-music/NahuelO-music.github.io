@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initSupportModal();
+    initPlatformsModal(); // Initialize Platforms Modal
     initAnalyticsTracking();
 });
 
@@ -302,3 +303,36 @@ Lo que estaba adentro, ahora resuena afuera.
     'font-size: 14px; color: #06b6d4;',
     'font-size: 12px; color: #888;'
 );
+
+// Platforms Modal Logic
+// ========================================
+function initPlatformsModal() {
+    const platformBtns = document.querySelectorAll('.btn-more-platforms');
+    const modalOverlay = document.getElementById('platforms-modal');
+    const modalClose = modalOverlay ? modalOverlay.querySelector('.modal-close') : null;
+
+    if (!platformBtns.length || !modalOverlay) return;
+
+    // Open Modal
+    platformBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close Modal
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+}
