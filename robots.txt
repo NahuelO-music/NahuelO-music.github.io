@@ -1,0 +1,8 @@
+# robots.txt for NahuelO Music
+# https://nahuelo-music.github.io
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nahuelo-music.github.io/sitemap.xml
