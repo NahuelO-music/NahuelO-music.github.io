@@ -689,7 +689,7 @@ body {
 /* Videos Grid */
 .videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 24px;
     margin-bottom: 40px;
 }
@@ -1335,11 +1335,12 @@ body {
         padding: 24px 20px;
     }
 }
+
 /* Verified Icon in Navbar */
 .verified-icon {
     display: inline-block;
     margin-left: 4px;
-    color: var(--accent-secondary); 
+    color: var(--accent-secondary);
     vertical-align: middle;
     width: 20px;
     height: 20px;
@@ -1430,4 +1431,3 @@ body {
 .album-overlay {
     flex-direction: column;
 }
-
