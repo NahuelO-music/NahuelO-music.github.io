@@ -1402,3 +1402,32 @@ body {
     margin-top: 20px;
 }
 
+
+/* Platform Tag */
+.platform-tag {
+    margin-top: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateY(10px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.album-card:hover .platform-tag {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.album-overlay {
+    flex-direction: column;
+}
+
