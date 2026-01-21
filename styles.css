@@ -1389,3 +1389,16 @@ body {
     font-weight: 500;
     font-size: 0.9rem;
 }
+
+/* Spotify Grid Fix */
+.spotify-embed {
+    max-width: 1000px;
+}
+
+.spotify-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
