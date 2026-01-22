@@ -23,7 +23,6 @@
     --instagram: #E4405F;
     --tiktok: #000000;
     --twitter: #ffffff;
-    --linktree: #43E660;
 
     --border-subtle: rgba(255, 255, 255, 0.1);
     --shadow-glow: 0 0 60px rgba(139, 92, 246, 0.3);
@@ -864,10 +863,7 @@ body {
     border-color: var(--twitter);
 }
 
-.social-card.linktree:hover {
-    background: rgba(67, 230, 96, 0.15);
-    border-color: var(--linktree);
-}
+
 
 .social-card span {
     font-weight: 500;
