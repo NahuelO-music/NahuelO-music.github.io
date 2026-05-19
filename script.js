@@ -149,6 +149,30 @@ function initSupportModal() {
             });
         });
     });
+
+    // QR Code Toggle Logic
+    const qrBtns = document.querySelectorAll('.qr-btn');
+    qrBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.crypto-item');
+            const qrContainer = item.querySelector('.qr-container');
+            const qrImg = item.querySelector('.qr-image');
+            const address = btn.dataset.address;
+
+            if (qrContainer.style.display === 'none' || !qrContainer.style.display) {
+                if (!qrImg.src) {
+                    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&color=0a0a0f&bgcolor=ffffff&data=${encodeURIComponent(address)}`;
+                }
+                qrContainer.style.display = 'block';
+                btn.style.background = 'var(--accent-primary)';
+                btn.style.color = 'white';
+            } else {
+                qrContainer.style.display = 'none';
+                btn.style.background = 'var(--bg-glass)';
+                btn.style.color = 'var(--accent-primary)';
+            }
+        });
+    });
 }
 
 // Navbar Scroll Effect
